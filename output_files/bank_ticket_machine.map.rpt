@@ -1,0 +1,465 @@
+Analysis & Synthesis report for bank_ticket_machine
+Sat Aug  3 20:30:41 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |bank_ticket_machine|current_state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |bank_ticket_machine
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Aug  3 20:30:41 2024          ;
+; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                      ; bank_ticket_machine                            ;
+; Top-level Entity Name              ; bank_ticket_machine                            ;
+; Family                             ; MAX 10                                         ;
+; Total logic elements               ; 304                                            ;
+;     Total combinational functions  ; 214                                            ;
+;     Dedicated logic registers      ; 134                                            ;
+; Total registers                    ; 134                                            ;
+; Total pins                         ; 48                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++------------------------------------------------------------------+---------------------+---------------------+
+; Option                                                           ; Setting             ; Default Value       ;
++------------------------------------------------------------------+---------------------+---------------------+
+; Device                                                           ; 10M08DAF484C8G      ;                     ;
+; Top-level entity name                                            ; bank_ticket_machine ; bank_ticket_machine ;
+; Family name                                                      ; MAX 10              ; Cyclone V           ;
+; Use smart compilation                                            ; Off                 ; Off                 ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                  ; On                  ;
+; Enable compact report table                                      ; Off                 ; Off                 ;
+; Restructure Multiplexers                                         ; Auto                ; Auto                ;
+; Create Debugging Nodes for IP Cores                              ; Off                 ; Off                 ;
+; Preserve fewer node names                                        ; On                  ; On                  ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable              ; Enable              ;
+; Verilog Version                                                  ; Verilog_2001        ; Verilog_2001        ;
+; VHDL Version                                                     ; VHDL_1993           ; VHDL_1993           ;
+; State Machine Processing                                         ; Auto                ; Auto                ;
+; Safe State Machine                                               ; Off                 ; Off                 ;
+; Extract Verilog State Machines                                   ; On                  ; On                  ;
+; Extract VHDL State Machines                                      ; On                  ; On                  ;
+; Ignore Verilog initial constructs                                ; Off                 ; Off                 ;
+; Iteration limit for constant Verilog loops                       ; 5000                ; 5000                ;
+; Iteration limit for non-constant Verilog loops                   ; 250                 ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                  ; On                  ;
+; Infer RAMs from Raw Logic                                        ; On                  ; On                  ;
+; Parallel Synthesis                                               ; On                  ; On                  ;
+; DSP Block Balancing                                              ; Auto                ; Auto                ;
+; NOT Gate Push-Back                                               ; On                  ; On                  ;
+; Power-Up Don't Care                                              ; On                  ; On                  ;
+; Remove Redundant Logic Cells                                     ; Off                 ; Off                 ;
+; Remove Duplicate Registers                                       ; On                  ; On                  ;
+; Ignore CARRY Buffers                                             ; Off                 ; Off                 ;
+; Ignore CASCADE Buffers                                           ; Off                 ; Off                 ;
+; Ignore GLOBAL Buffers                                            ; Off                 ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                 ; Off                 ;
+; Ignore LCELL Buffers                                             ; Off                 ; Off                 ;
+; Ignore SOFT Buffers                                              ; On                  ; On                  ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                 ; Off                 ;
+; Optimization Technique                                           ; Balanced            ; Balanced            ;
+; Carry Chain Length                                               ; 70                  ; 70                  ;
+; Auto Carry Chains                                                ; On                  ; On                  ;
+; Auto Open-Drain Pins                                             ; On                  ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                 ; Off                 ;
+; Auto ROM Replacement                                             ; On                  ; On                  ;
+; Auto RAM Replacement                                             ; On                  ; On                  ;
+; Auto DSP Block Replacement                                       ; On                  ; On                  ;
+; Auto Shift Register Replacement                                  ; Auto                ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                ; Auto                ;
+; Auto Clock Enable Replacement                                    ; On                  ; On                  ;
+; Strict RAM Replacement                                           ; Off                 ; Off                 ;
+; Allow Synchronous Control Signals                                ; On                  ; On                  ;
+; Force Use of Synchronous Clear Signals                           ; Off                 ; Off                 ;
+; Auto RAM Block Balancing                                         ; On                  ; On                  ;
+; Auto RAM to Logic Cell Conversion                                ; Off                 ; Off                 ;
+; Auto Resource Sharing                                            ; Off                 ; Off                 ;
+; Allow Any RAM Size For Recognition                               ; Off                 ; Off                 ;
+; Allow Any ROM Size For Recognition                               ; Off                 ; Off                 ;
+; Allow Any Shift Register Size For Recognition                    ; Off                 ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing              ; On                  ; On                  ;
+; Ignore translate_off and synthesis_off directives                ; Off                 ; Off                 ;
+; Timing-Driven Synthesis                                          ; On                  ; On                  ;
+; Report Parameter Settings                                        ; On                  ; On                  ;
+; Report Source Assignments                                        ; On                  ; On                  ;
+; Report Connectivity Checks                                       ; On                  ; On                  ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                 ; Off                 ;
+; Synchronization Register Chain Length                            ; 2                   ; 2                   ;
+; Power Optimization During Synthesis                              ; Normal compilation  ; Normal compilation  ;
+; HDL message level                                                ; Level2              ; Level2              ;
+; Suppress Register Optimization Related Messages                  ; Off                 ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                 ; 100                 ;
+; Clock MUX Protection                                             ; On                  ; On                  ;
+; Auto Gated Clock Conversion                                      ; Off                 ; Off                 ;
+; Block Design Naming                                              ; Auto                ; Auto                ;
+; SDC constraint protection                                        ; Off                 ; Off                 ;
+; Synthesis Effort                                                 ; Auto                ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                  ; On                  ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                 ; Off                 ;
+; Analysis & Synthesis Message Level                               ; Medium              ; Medium              ;
+; Disable Register Merging Across Hierarchies                      ; Auto                ; Auto                ;
+; Resource Aware Inference For Block RAM                           ; On                  ; On                  ;
++------------------------------------------------------------------+---------------------+---------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 14          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-14        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                     ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+; bank_ticket_machine.v            ; yes             ; User Verilog HDL File  ; C:/intel_working/Final/Final/bank_ticket_machine.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 304       ;
+;                                             ;           ;
+; Total combinational functions               ; 214       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 149       ;
+;     -- 3 input functions                    ; 44        ;
+;     -- <=2 input functions                  ; 21        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 214       ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 134       ;
+;     -- Dedicated logic registers            ; 134       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 48        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 134       ;
+; Total fan-out                               ; 1268      ;
+; Average fan-out                             ; 2.86      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name  ; Entity Name         ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
+; |bank_ticket_machine       ; 214 (214)           ; 134 (134)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 48   ; 0            ; 0          ; |bank_ticket_machine ; bank_ticket_machine ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------+
+; State Machine - |bank_ticket_machine|current_state                                                        ;
++------------------------------+--------------------+------------------------------+------------------------+
+; Name                         ; current_state.IDLE ; current_state.HANDLE_REQUEST ; current_state.DISPENSE ;
++------------------------------+--------------------+------------------------------+------------------------+
+; current_state.IDLE           ; 0                  ; 0                            ; 0                      ;
+; current_state.DISPENSE       ; 1                  ; 0                            ; 1                      ;
+; current_state.HANDLE_REQUEST ; 1                  ; 1                            ; 0                      ;
++------------------------------+--------------------+------------------------------+------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++-----------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------+------------------------+
+; ticket_display[0]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; ticket_display[1]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; ticket_display[2]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; ticket_display[3]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; ticket_display[4]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; ticket_display[5]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; ticket_display[6]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; desk_display[0]$latch                               ; current_state.HANDLE_REQUEST ; yes                    ;
+; desk_display[1]$latch                               ; current_state.HANDLE_REQUEST ; yes                    ;
+; desk_display[2]$latch                               ; current_state.HANDLE_REQUEST ; yes                    ;
+; desk_display[3]$latch                               ; current_state.HANDLE_REQUEST ; yes                    ;
+; desk_display[4]$latch                               ; current_state.HANDLE_REQUEST ; yes                    ;
+; desk_display[5]$latch                               ; current_state.HANDLE_REQUEST ; yes                    ;
+; desk_display[6]$latch                               ; current_state.HANDLE_REQUEST ; yes                    ;
+; letter_display[0]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; letter_display[1]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; letter_display[2]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; letter_display[3]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; letter_display[4]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; letter_display[5]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; letter_display[6]$latch                             ; current_state.DISPENSE       ; yes                    ;
+; pre_service_type[0]                                 ; pre_service_type[0]          ; yes                    ;
+; pre_service_type[1]                                 ; pre_service_type[0]          ; yes                    ;
+; pre_officer_request[0]                              ; pre_officer_request[0]       ; yes                    ;
+; pre_officer_request[1]                              ; pre_officer_request[0]       ; yes                    ;
+; pre_officer_request[2]                              ; pre_officer_request[0]       ; yes                    ;
+; pre_officer_request[3]                              ; pre_officer_request[0]       ; yes                    ;
+; next_state.HANDLE_REQUEST_2576                      ; next_state.HANDLE_REQUEST    ; yes                    ;
+; next_state.DISPENSE_2595                            ; next_state.HANDLE_REQUEST    ; yes                    ;
+; next_state.IDLE_2614                                ; next_state.HANDLE_REQUEST    ; yes                    ;
+; Number of user-specified and inferred latches = 30  ;                              ;                        ;
++-----------------------------------------------------+------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++----------------------------------------+--------------------------------------------------+
+; Register name                          ; Reason for Removal                               ;
++----------------------------------------+--------------------------------------------------+
+; handle_ticket_letter_display[2]~reg0   ; Stuck at VCC due to stuck port data_in           ;
+; handle_ticket_letter_display[1]~reg0   ; Stuck at VCC due to stuck port data_in           ;
+; handle_ticket_letter_display[4]~reg0   ; Merged with handle_ticket_letter_display[0]~reg0 ;
+; head[4..9,11..31]                      ; Merged with head[10]                             ;
+; tail[4..9,11..31]                      ; Merged with tail[10]                             ;
+; head[10]                               ; Stuck at GND due to stuck port data_in           ;
+; tail[10]                               ; Stuck at GND due to stuck port data_in           ;
+; Total Number of Removed Registers = 59 ;                                                  ;
++----------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 134   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 27    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 124   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |bank_ticket_machine|waiting_customers[1]                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |bank_ticket_machine|handle_ticket_letter_display[0]~reg0 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |bank_ticket_machine|Mux0                                 ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |bank_ticket_machine|Mux6                                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |bank_ticket_machine|Selector6                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |bank_ticket_machine ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; IDLE           ; 00    ; Unsigned Binary                                            ;
+; DISPENSE       ; 01    ; Unsigned Binary                                            ;
+; HANDLE_REQUEST ; 10    ; Unsigned Binary                                            ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 48                          ;
+; cycloneiii_ff         ; 134                         ;
+;     CLR               ; 10                          ;
+;     ENA               ; 107                         ;
+;     ENA CLR           ; 17                          ;
+; cycloneiii_lcell_comb ; 215                         ;
+;     normal            ; 215                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 44                          ;
+;         4 data inputs ; 149                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.57                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Sat Aug  3 20:30:34 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bank_ticket_machine -c bank_ticket_machine
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file bank_ticket_machine.v
+    Info (12023): Found entity 1: bank_ticket_machine File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 1
+Info (12127): Elaborating entity "bank_ticket_machine" for the top level hierarchy
+Info (10264): Verilog HDL Case Statement information at bank_ticket_machine.v(93): all case item expressions in this case statement are onehot File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 93
+Warning (10240): Verilog HDL Always Construct warning at bank_ticket_machine.v(42): inferring latch(es) for variable "next_state", which holds its previous value in one or more paths through the always construct File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at bank_ticket_machine.v(42): inferring latch(es) for variable "ticket_display", which holds its previous value in one or more paths through the always construct File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at bank_ticket_machine.v(42): inferring latch(es) for variable "desk_display", which holds its previous value in one or more paths through the always construct File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at bank_ticket_machine.v(42): inferring latch(es) for variable "letter_display", which holds its previous value in one or more paths through the always construct File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at bank_ticket_machine.v(42): inferring latch(es) for variable "pre_service_type", which holds its previous value in one or more paths through the always construct File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at bank_ticket_machine.v(42): inferring latch(es) for variable "pre_officer_request", which holds its previous value in one or more paths through the always construct File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at bank_ticket_machine.v(42): inferring latch(es) for variable "ticket_number", which holds its previous value in one or more paths through the always construct File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 42
+Warning (10240): Verilog HDL Always Construct warning at bank_ticket_machine.v(42): inferring latch(es) for variable "current_desk", which holds its previous value in one or more paths through the always construct File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 42
+Warning (10230): Verilog HDL assignment warning at bank_ticket_machine.v(131): truncated value with size 32 to match size of target (4) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 131
+Warning (10230): Verilog HDL assignment warning at bank_ticket_machine.v(136): truncated value with size 32 to match size of target (4) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 136
+Warning (10230): Verilog HDL assignment warning at bank_ticket_machine.v(141): truncated value with size 32 to match size of target (4) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 141
+Warning (10230): Verilog HDL assignment warning at bank_ticket_machine.v(146): truncated value with size 32 to match size of target (4) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 146
+Warning (10230): Verilog HDL assignment warning at bank_ticket_machine.v(149): truncated value with size 32 to match size of target (4) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 149
+Info (10041): Inferred latch for "pre_officer_request[0]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "pre_officer_request[1]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "pre_officer_request[2]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "pre_officer_request[3]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "pre_service_type[0]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "pre_service_type[1]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "letter_display[0]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "letter_display[1]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "letter_display[2]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "letter_display[3]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "letter_display[4]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "letter_display[5]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "letter_display[6]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "desk_display[0]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "desk_display[1]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "desk_display[2]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "desk_display[3]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "desk_display[4]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "desk_display[5]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "desk_display[6]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "ticket_display[0]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "ticket_display[1]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "ticket_display[2]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "ticket_display[3]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "ticket_display[4]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "ticket_display[5]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "ticket_display[6]" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "next_state.HANDLE_REQUEST" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "next_state.DISPENSE" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (10041): Inferred latch for "next_state.IDLE" at bank_ticket_machine.v(49) File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "ticket_queue" is uninferred due to inappropriate RAM size File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 28
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "desk_display[6]$latch" merged with LATCH primitive "desk_display[3]$latch" File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+    Info (13026): Duplicate LATCH primitive "letter_display[4]$latch" merged with LATCH primitive "letter_display[0]$latch" File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+    Info (13026): Duplicate LATCH primitive "letter_display[2]$latch" merged with LATCH primitive "letter_display[1]$latch" File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+Warning (13012): Latch pre_officer_request[0] has unsafe behavior File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal officer_request[0] File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 5
+Warning (13012): Latch pre_officer_request[1] has unsafe behavior File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal officer_request[1] File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 5
+Warning (13012): Latch pre_officer_request[2] has unsafe behavior File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal officer_request[2] File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 5
+Warning (13012): Latch pre_officer_request[3] has unsafe behavior File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal officer_request[3] File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 5
+Warning (13012): Latch next_state.HANDLE_REQUEST_2576 has unsafe behavior File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.HANDLE_REQUEST File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 20
+Warning (13012): Latch next_state.DISPENSE_2595 has unsafe behavior File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.DISPENSE File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 20
+Warning (13012): Latch next_state.IDLE_2614 has unsafe behavior File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 49
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 3
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "handle_ticket_letter_display[1]" is stuck at VCC File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 127
+    Warning (13410): Pin "handle_ticket_letter_display[2]" is stuck at VCC File: C:/intel_working/Final/Final/bank_ticket_machine.v Line: 127
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/intel_working/Final/Final/output_files/bank_ticket_machine.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 370 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 39 output pins
+    Info (21061): Implemented 322 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Sat Aug  3 20:30:41 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/intel_working/Final/Final/output_files/bank_ticket_machine.map.smsg.
+
+

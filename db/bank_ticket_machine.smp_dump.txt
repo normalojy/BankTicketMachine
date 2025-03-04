@@ -1,0 +1,6 @@
+
+State Machine - |bank_ticket_machine|current_state
+Name current_state.IDLE current_state.HANDLE_REQUEST current_state.DISPENSE 
+current_state.IDLE 0 0 0 
+current_state.DISPENSE 1 0 1 
+current_state.HANDLE_REQUEST 1 1 0 

@@ -1,0 +1,193 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ticket_display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ticket_display[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ticket_display[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ticket_display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ticket_display[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ticket_display[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ticket_display[6]",
+					"strict" : false
+				},
+				{
+					"name" : "desk_display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "desk_display[1]",
+					"strict" : false
+				},
+				{
+					"name" : "desk_display[2]",
+					"strict" : false
+				},
+				{
+					"name" : "desk_display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "desk_display[4]",
+					"strict" : false
+				},
+				{
+					"name" : "desk_display[5]",
+					"strict" : false
+				},
+				{
+					"name" : "desk_display[6]",
+					"strict" : false
+				},
+				{
+					"name" : "waiting_customers_display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "waiting_customers_display[1]",
+					"strict" : false
+				},
+				{
+					"name" : "waiting_customers_display[2]",
+					"strict" : false
+				},
+				{
+					"name" : "waiting_customers_display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "letter_display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "letter_display[1]",
+					"strict" : false
+				},
+				{
+					"name" : "letter_display[2]",
+					"strict" : false
+				},
+				{
+					"name" : "letter_display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "letter_display[4]",
+					"strict" : false
+				},
+				{
+					"name" : "letter_display[5]",
+					"strict" : false
+				},
+				{
+					"name" : "letter_display[6]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_number_display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_number_display[1]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_number_display[2]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_number_display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_number_display[4]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_number_display[5]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_number_display[6]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_letter_display[0]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_letter_display[3]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_letter_display[4]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_letter_display[5]",
+					"strict" : false
+				},
+				{
+					"name" : "handle_ticket_letter_display[6]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "customer_request",
+					"strict" : false
+				},
+				{
+					"name" : "officer_request[0]",
+					"strict" : false
+				},
+				{
+					"name" : "officer_request[1]",
+					"strict" : false
+				},
+				{
+					"name" : "officer_request[2]",
+					"strict" : false
+				},
+				{
+					"name" : "officer_request[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "service_type[1]",
+					"strict" : false
+				},
+				{
+					"name" : "service_type[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
