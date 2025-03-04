@@ -16,3 +16,9 @@ To design and implement a digital bank ticketing system that efficiently manages
 2. The machine assigns a ticket number and updates the queue.
 3. Bank officers request the next ticket, and the assigned ticket is displayed.
 4. FIFO ensures proper queue management.
+
+## Files
+- bank_ticket_machine.v - Main Verilog Code
+
+## FLowchart
+![Bank Ticket Machine FLowchart](https://github.com/user-attachments/assets/82ab77ec-a5df-47fb-be19-4237df8f2dd5)
